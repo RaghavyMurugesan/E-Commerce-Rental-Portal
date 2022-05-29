@@ -1,0 +1,16 @@
+.Navbar {
+  background-color: var(--main-color);
+  color: white;
+  position: sticky;
+}
+.text-link {
+  color: white;
+  text-decoration: none;
+}
+.text-link:hover {
+  border-bottom: 3px solid var(--second-color);
+  color: var(--second-color);
+}
+.cart-icon {
+  color: white;
+}
