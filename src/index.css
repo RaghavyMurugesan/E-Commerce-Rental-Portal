@@ -10,5 +10,5 @@
   --main-color: #a72d6e;
   --second-color: #05aadd;
   --text-color: #444;
-  --gradient: linear-gradient(#a72d6e, #05aadd);
+  --gradient: linear-gradient(#a72d6e,  #9952a1, #7774c7, #4691da, #05aadd);
 }

@@ -1,15 +1,74 @@
-.Navbar {
+nav {
+  padding: 1rem;
+}
+.navbar,
+.navbar-brand {
   background-color: var(--main-color);
   color: white;
-  position: sticky;
 }
-.text-link {
+.nav-link {
   color: white;
-  text-decoration: none;
 }
-.text-link:hover {
-  border-bottom: 3px solid var(--second-color);
+.nav-link:hover {
   color: var(--second-color);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--second-color);
+  padding: 0.5rem;
+}
+
+.navbar-expand-md .navbar-collapse {
+  justify-content: flex-end;
+}
+.menu-icon {
+  display: none;
+}
+.collapse:not(.show) {
+  display: block;
+}
+.nav-button {
+  margin-left: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    transform: translate(-100%);
+    cursor: pointer;
+  }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 10vh;
+    left: -100%;
+    transition: all 0.4s ease;
+    overflow: auto;
+    opacity: 0;
+  }
+  .nav-menu-mobile {
+    background-color: var(--main-color);
+    left: 0;
+    transition: all 0.5s ease;
+    z-index: 100;
+    opacity: 1;
+  }
+  .nav-link {
+    text-align: center;
+    width: 100%;
+    display: table;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: var(--second-color);
+  }
+}
+.icon-group {
+  display: flex;
+  justify-content: flex-end;
+  color:white;
 }
 .cart-icon {
   color: white;

@@ -1,41 +1,51 @@
 import { React, useState } from "react";
-import { items } from "../data.js";
-import { Box, Card, CardMedia, CardActions, CardContent } from "@mui/material";
-function Product() {
-  const [cart, setCart] = useState([]);
-  function addToCart(item) {
-    console.log(item);
-    setCart([...cart, item]);
-    console.log(cart);
-  }
+import { productList } from "../data.js";
+import { Box, Stack, Chip } from "@mui/material";
+import { ProductCard } from "../components/ProductCard.js";
+const allCatvalues = [
+  ...new Set(
+    productList.map((el) => {
+      return el.category;
+    })
+  ),
+  "all",
+];
+console.log(allCatvalues);
+function Product({ addToCart }) {
+  const [product, setProduct] = useState(productList);
+  const [catItems, setcatItems] = useState(allCatvalues);
+  const filterMenu = (category) => {
+    if (category === "all") {
+      setProduct(productList);
+      return;
+    }
+    const updatedItems = productList.filter((curEl) => {
+      return curEl.category === category;
+    });
+    setProduct(updatedItems);
+    console.log(updatedItems);
+  };
   return (
-    <Box className="box">
-      {items.map((item, index) => (
-        <Card className="card" key={index} item={item}>
-          <CardMedia
-            component="img"
-            alt={item.name}
-            src={item.image}
-            className="card-img-top"
+    <div>
+      <Stack direction="row" spacing={2} className='stack' >
+        {catItems.map((catEl, index) => (
+          <Chip
+            label={catEl}
+            key={index}
+            variant="outlined"
+            color="secondary"
+            size="small"
+            onClick={() => filterMenu(catEl)}
           />
-          <CardContent className="card-body">
-            <h4 className="card-title">{item.name}</h4>
-            <h6>{item.brand}</h6>
-            <p>{item.category}</p>
-            <h3>{item.price}/day</h3>
-          </CardContent>
-          <CardActions>
-            <button
-              className="btn btn-info"
-              // item={item}
-              onClick={addToCart(item)}
-            >
-              Add to Cart
-            </button>
-          </CardActions>
-        </Card>
-      ))}
-    </Box>
+        ))}
+      </Stack>
+
+      <Box className="box">
+        {product.map((item, index) => (
+          <ProductCard key={index} item={item} addToCart={addToCart} />
+        ))}
+      </Box>
+    </div>
   );
 }
 

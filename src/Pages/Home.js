@@ -1,4 +1,7 @@
 import React from "react";
+import { stepdata } from "../data";
+import { Grid, SvgIcon } from "@mui/material";
+
 function Home() {
   return (
     <>
@@ -18,29 +21,31 @@ function Home() {
             <li>Love</li>
           </ul>
         </div>
-        <div >
+        <div>
           <img className="home-image" alt="camera" src="/Images/camera1.jpg" />
         </div>
       </section>
-      <div className="container">
-        <form action="" className="d-flex">
-          <div className="form-group">
-            <span>Location</span>
-
-            <input type="search" id="location" className="form-control" />
-          </div>
-          <div className="form-group">
-            <span>Pick-Up Date</span>
-            <input type="date" id="pickup" className="form-control" />{" "}
-          </div>
-          <div className="form-group">
-            <span>Return Date</span>
-            <input type="date" id="return" className="form-control" />
-          </div>
-          <div className="align-self-center form-group">
-            <input type="submit" className=" btn btn-primary form-control" />
-          </div>
-        </form>
+      <div>
+        <div className="rent-head">
+          <span>HOW IT WORKS</span>
+          <h2>Rent in 4 Steps</h2>
+        </div>
+        <Grid container spacing={1}>
+          {" "}
+          {stepdata.map((st, index) => (
+            <Grid item xs={6} sm={4} md={2} lg={2} key={index} className="step">
+              <div className="title">
+                {" "}
+                <SvgIcon sx={{ fontSize: 32 }} className="st-icon">
+                  {st.icon}
+                </SvgIcon>{" "}
+                &nbsp; &nbsp;
+                <h6 className="function">{st.function}</h6>
+                <p className="step-des"> {st.description}</p>
+              </div>
+            </Grid>
+          ))}
+        </Grid>
       </div>
     </>
   );

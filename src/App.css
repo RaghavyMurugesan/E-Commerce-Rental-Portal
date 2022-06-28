@@ -54,11 +54,64 @@ form {
   justify-content: space-evenly;
 }
 .card {
-  width: 325px;
-  height: 480px;
+  width: 300px;
+  height: fit-content;
   padding: 1rem;
   cursor: pointer;
 }
 img.card-img-top {
   height: 200px;
+}
+.card-body {
+  padding: 1rem;
+}
+
+.rent-head {
+  text-align: center;
+  padding: 2rem;
+  text-transform: capitalize;
+  
+}
+
+div.title{
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+}
+div.MuiGrid-root{
+  justify-content: center;
+  gap:3.5rem;
+}
+.step{
+  padding:8px;
+  border-radius: 1rem;
+ box-shadow: 2px 2px 5px var(--main-color);
+}
+p.step-des{
+  text-align:center;
+  color:#444;
+  font-size:small;
+  padding-top:.5rem;
+  width:85%;
+}
+.function{
+  color:var(--main-color)
+}
+.st-icon{
+ filter:drop-shadow(1px 1px 1px var(--main-color));
+ border-radius:5px;
+}
+
+.st-icon:hover{
+  background-image: var(--gradient);
+  color:white;
+}
+/* .MuiStack-root{
+ 
+} */
+div.stack{
+  padding-top:2rem ;
+  justify-content: center;
+  align-items: center;
 }
