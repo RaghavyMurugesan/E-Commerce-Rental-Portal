@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import { productList } from "../data.js";
 import { Box, Stack, Chip } from "@mui/material";
 import { ProductCard } from "../components/ProductCard.js";
@@ -13,7 +13,7 @@ const allCatvalues = [
 console.log(allCatvalues);
 function Product({ addToCart }) {
   const [product, setProduct] = useState(productList);
-  const [catItems, setcatItems] = useState(allCatvalues);
+  const [catItems] = useState(allCatvalues);
   const filterMenu = (category) => {
     if (category === "all") {
       setProduct(productList);

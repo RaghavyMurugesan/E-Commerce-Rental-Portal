@@ -8,7 +8,8 @@ import Contact from "./Pages/Contact";
 import Services from "./Pages/Services";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
-import { React, useState, useEffect } from "react";
+import React, { useState } from "react";
+
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -22,24 +23,19 @@ function App() {
   // }, [cart]);
 
   return (
-    <>
-      <Router>
-        <Navbar cart={cart} />
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/product" element={<Product addToCart={addToCart} />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={<Services />} />
-          <Route
-            path="/cart"
-            element={<Cart cart={cart} setCart={setCart} />}
-          />
-          <Route element={<Home />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <Navbar cart={cart} />
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/product" element={<Product addToCart={addToCart} />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 

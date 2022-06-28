@@ -1,41 +1,51 @@
 .cart {
   display: grid;
-  grid-template-columns: 2fr 3fr 1fr 4fr 1fr ;
-  grid-column-gap: .5rem;
-  align-items: center;
-  justify-items: center;
+  grid-template-columns: 1fr 2fr;
+  align-items:center;
 }
 .cartcover {
-  height: 5rem;
-  width: 5rem;
+  margin: auto;
+  height: 90%;
+  width: 90%;
   object-fit: cover;
+}
+.cart-content {
+  border: 2px solid purple;
+  padding: 2rem;
+}
+.date-picker{
+  padding:1rem;
+}
+.cart-price {
+  display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .delete {
   color: #fc3122;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.section{
-    align-items: center;
+.section {
+  align-items: center;
 }
-p{
-    margin:0;
+p {
+  margin: 0;
 }
-h6{
-    margin:0
+h6 {
+  margin: 0;
 }
-.lead{
-    font-size: 2.25rem;
-    margin: 0 0 2rem 1rem;
+.lead {
+  font-size: 2.25rem;
+  margin: 0 0 2rem 1rem;
 }
-.css-9aa3p4-MuiButtonBase-root-MuiButton-root{
-    background-color:#a72d6e ;
+.css-9aa3p4-MuiButtonBase-root-MuiButton-root {
+  background-color: #a72d6e;
 }
-.button-group{
-  display:grid;
-  grid-template-columns:1fr 1fr;
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
-
 }

@@ -15,6 +15,9 @@
   filter: drop-shadow(30px 15px 4px var(--main-color));
   padding: 5rem;
 }
+div.text{
+  text-align: center;
+}
 span,
 .display-5 {
   color: var(--main-color);
@@ -70,48 +73,45 @@ img.card-img-top {
   text-align: center;
   padding: 2rem;
   text-transform: capitalize;
-  
 }
 
-div.title{
+div.title {
   align-items: center;
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
 }
-div.MuiGrid-root{
+div.MuiGrid-root {
   justify-content: center;
-  gap:3.5rem;
+  gap: 3.5rem;
 }
-.step{
-  padding:8px;
+.step {
+  padding: 8px;
   border-radius: 1rem;
- box-shadow: 2px 2px 5px var(--main-color);
+  box-shadow: 2px 2px 5px var(--main-color);
 }
-p.step-des{
-  text-align:center;
-  color:#444;
-  font-size:small;
-  padding-top:.5rem;
-  width:85%;
+p.step-des {
+  text-align: center;
+  color: #444;
+  font-size: small;
+  padding-top: 0.5rem;
+  width: 85%;
 }
-.function{
-  color:var(--main-color)
+.function {
+  color: var(--main-color);
 }
-.st-icon{
- filter:drop-shadow(1px 1px 1px var(--main-color));
- border-radius:5px;
+.st-icon {
+  filter: drop-shadow(1px 1px 1px var(--main-color));
+  border-radius: 5px;
 }
 
-.st-icon:hover{
+.st-icon:hover {
   background-image: var(--gradient);
-  color:white;
+  color: white;
 }
-/* .MuiStack-root{
- 
-} */
-div.stack{
-  padding-top:2rem ;
+
+div.stack {
+  padding-top: 2rem;
   justify-content: center;
   align-items: center;
 }
