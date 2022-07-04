@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/login.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Stack, TextField, Button, Box } from "@mui/material";
 function Login() {
+  const [signin, setSignin] = useState(true);
+
   return (
     <div className="body">
       <Box className="container">
         <div className="form-container signup-container">
           <form action="#">
-            <h2>Create Account</h2>
+            <h1>Create Account</h1>
             <Stack spacing={3} direction="row">
               <FacebookIcon />
               <GoogleIcon />
@@ -46,7 +48,7 @@ function Login() {
         </div>
         <div className="form-container signin-container">
           <form action="#">
-            <h2>Sign-In</h2>
+            <h1 >Sign-In</h1>
             <Stack spacing={3} direction="row">
               <FacebookIcon />
               <GoogleIcon />
@@ -80,18 +82,34 @@ function Login() {
             <button className="sign-button">Sign-In</button>
           </form>
         </div>
-        <div className="overlay-container">
-          <div className="overlay">
-            <div className="overlay-panel overlay-left">
-              <h1>Welcome to RENTLY</h1>
-              <p>Rent Shoot Repeat</p>
-              <button className="press">Sign-In</button>
-            </div>
-            <div className="overlay-panel overlay-right">
-              <h1>Welcome to RENTLY</h1>
-              <p>Rent Shoot Repeat</p>
-              <Button>Sign-Up</Button>
-            </div>
+        <div
+          className="overlay-container"
+          style={signin ? { right: "50%" } : { left: "50%" }}
+        >
+          <div className="overlay" style={signin ? { left: "-100%" } : {}}>
+            {signin ? (
+              <div className="overlay-panel overlay-right">
+                <h1>Welcome to RENTLY</h1>
+                <p>Rent Shoot Repeat</p>
+                <button
+                  className="btn press"
+                  onClick={() => setSignin(!signin)}
+                >
+                  Sign-Up
+                </button>
+              </div>
+            ) : (
+              <div className="overlay-panel overlay-left">
+                <h1>Welcome to RENTLY</h1>
+                <p>Rent Shoot Repeat</p>
+                <Button
+                  className="btn press"
+                  onClick={() => setSignin(!signin)}
+                >
+                  Sign-In
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </Box>

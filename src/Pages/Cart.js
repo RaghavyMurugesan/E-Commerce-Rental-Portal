@@ -1,26 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "mui-image";
 import "../Styles/cart.css";
 import { Counter } from "./Counter";
 import { NavLink } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import "react-datepicker/dist/react-datepicker.css";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import differenceInDays from "date-fns/differenceInDays";
+import { differenceInDays } from "date-fns";
 import { Button, Stack, TextField, Divider } from "@mui/material";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
-
+import "react-datepicker/dist/react-datepicker.css";
 function DateChooser() {
   const [fromDate, setFromDate] = useState(null);
   const [toDate, setToDate] = useState(null);
-  const [dayscount, setDaysCount] = useState(0);
-  // const differenceInDays = require("date-fns/differenceInDays");
-  console.log(fromDate, toDate, differenceInDays);
+  const [dayscount, setdayscount] = useState(0);
+  const handlefromDate = (date) => {
+    setFromDate(date);
+    setToDate(null);
+  };
 
-  //  const diffInDays = differenceInDays(new Date(toDate), new Date(fromDate));
-  // setDaysCount(diffInDays)
-  //  console.log(diffInDays);
+  const handletoDate = (date) => {
+    setToDate(date);
+    datedifference();
+  };
+  function datedifference() {
+    //if ((fromDate !== null && toDate !== null)){
+    var dayscount = differenceInDays(new Date(toDate), new Date(fromDate));
+    setdayscount(dayscount);
+    console.log(dayscount);
+    
+  }
+  useEffect(() => {
+    datedifference()
+  }, [dayscount]);
   return (
     <Stack spacing={1} direction="row">
       <DatePicker
@@ -31,9 +43,7 @@ function DateChooser() {
         mask="__-__-____"
         disablePast
         minDate={new Date()}
-        onChange={(newValue) => {
-          setFromDate(newValue);
-        }}
+        onChange={handlefromDate}
       />
       <DatePicker
         label="Return"
@@ -42,17 +52,14 @@ function DateChooser() {
         inputFormat="dd-MM-yyyy"
         mask="__-__-____"
         disablePast
-        minDate={new Date()}
-        onChange={(newValue) => {
-          setToDate(newValue);
-        }}
+        minDate={fromDate}
+        onChange={handletoDate}
       />
-      <h6> No.of days{dayscount}</h6>
+      {fromDate && toDate && <h6> No.of days :{dayscount}</h6>}
     </Stack>
   );
 }
 function Cart({ cart, setCart }) {
-  
   let handleRemove = (index) => {
     let newcart = [...cart];
     newcart.splice(index, 1);
@@ -69,37 +76,36 @@ function Cart({ cart, setCart }) {
           </span>
         </header>
 
-        {cart &&
-          cart.map((el, index) => (
-            <div key={index}>
-              <div className="cart">
-                <div className="cartcover">
-                  <Image src={el.image} alt={el.name} />
-                </div>
-                <div className="cart-content">
-                  <h4>{el.name}</h4>
-                  <div className="cart-price">
-                    <h6>{el.price}</h6>
-                    <Counter
-                      cart={cart}
-                      index={index}
-                      el={el}
-                      setCart={setCart}
-                    />
-                  </div>
-                  <div className="date-picker">
-                  <DateChooser />
-                  </div>
-                  <DeleteIcon
-                    className="delete"
-                    onClick={handleRemove}
-                    size="large"
+        {cart.map((el, index) => (
+          <div key={index}>
+            <div className="cart">
+              <div className="cartcover">
+                <Image src={el.image} alt={el.name} />
+              </div>
+              <div className="cart-content">
+                <h4>{el.name}</h4>
+                <div className="cart-price">
+                  <h6>{el.price}</h6>
+                  <Counter
+                    cart={cart}
+                    index={index}
+                    el={el}
+                    setCart={setCart}
                   />
                 </div>
+                <div className="date-picker">
+                  <DateChooser />
+                </div>
+                <DeleteIcon
+                  className="delete"
+                  onClick={handleRemove}
+                  size="large"
+                />
               </div>
-              <Divider />
             </div>
-          ))}
+            <Divider />
+          </div>
+        ))}
         <NavLink to={"../product"}>
           <Button variant="outlined">
             {" "}
