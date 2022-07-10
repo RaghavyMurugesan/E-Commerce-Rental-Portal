@@ -28,10 +28,9 @@ function DateChooser() {
     var dayscount = differenceInDays(new Date(toDate), new Date(fromDate));
     setdayscount(dayscount);
     console.log(dayscount);
-    
   }
   useEffect(() => {
-    datedifference()
+    datedifference();
   }, [dayscount]);
   return (
     <Stack spacing={1} direction="row">
