@@ -7,8 +7,15 @@
   font-family: "Poppins", sans-serif;
 }
 :root {
-  --main-color: #a72d6e;
-  --second-color: #05aadd;
+  --main-color: #af1b77;
+  --second-color: #00aaf8;
   --text-color: #444;
-  --gradient: linear-gradient(225deg,#a72d6e,  #9952a1, #7774c7, #4691da, #05aadd);
+  --gradient: linear-gradient(
+    to right top,
+    #af1b77,
+    #a34ba9,
+    #876fd1,
+    #5a8fec,
+    #00aaf8
+  );
 }

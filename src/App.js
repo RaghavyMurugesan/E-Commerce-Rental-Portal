@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useParams,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
@@ -9,10 +14,12 @@ import Services from "./Pages/Services";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import React, { useState } from "react";
-
+import { productList } from "./data";
+import { Modal } from "@mui/material";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [product, setProduct] = useState(productList);
 
   function addToCart(item) {
     if (cart.indexOf(item) !== -1) return;
@@ -22,6 +29,12 @@ function App() {
   //   console.log(cart.length);
   // }, [cart]);
 
+  function ProductDetails() {
+    const { id } = useParams();
+    const selectedProduct = product[id];
+    console.log(id);
+    return <div>Product Details{selectedProduct.name}</div>;
+  }
   return (
     <Router>
       <Navbar cart={cart} />
@@ -29,7 +42,20 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
-        <Route path="/product" element={<Product addToCart={addToCart} />} />
+        <Route
+          path="/product"
+          element={
+            <Product
+              addToCart={addToCart}
+              product={product}
+              setProduct={setProduct}
+            />
+          }
+        />
+        <Route
+          path="product/:id"
+          element={<ProductDetails product={product} setProduct={setProduct} />}
+        />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />

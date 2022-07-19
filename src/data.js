@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import CachedIcon from "@mui/icons-material/Cached";
 let productList = [
   {
+    id: 0,
     name: "Nikon Z6",
     image: "https://lenstiger.com/image/product/5e085a34e1599Z6.jpg",
     brand: "Nikon",
@@ -13,6 +14,8 @@ let productList = [
     unit: 1,
   },
   {
+    id: 1,
+
     name: "Sony HXR-NX200",
     image:
       "https://lenstiger.com/image/product/621ce4c1b3fe0816DfEJkYRL._AC_SL1500_.jpg",
@@ -22,6 +25,8 @@ let productList = [
     unit: 1,
   },
   {
+    id: 2,
+
     name: "Panasonic -GH5s",
     image: "https://lenstiger.com/image/product/5e08b39e8858egh5-pana.jpg",
     brand: "Panasonic",
@@ -30,6 +35,8 @@ let productList = [
     unit: 1,
   },
   {
+    id: 3,
+
     name: "Canon RF 70-200mm F2.8 L",
     image:
       "https://lenstiger.com/image/product/60dd95586db0aCanon-RF-70-200mm-F2.8-L-IS-USM-Lens.jpg",
@@ -39,6 +46,7 @@ let productList = [
     unit: 1,
   },
   {
+    id: 4,
     name: " GODOX SL100Bi",
     image:
       "https://lenstiger.com/image/product/621ce25665a8a71gATSv47hS._SL1500_.jpg",

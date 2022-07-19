@@ -8,7 +8,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import { AppBar, IconButton, Typography, Button, Badge } from "@mui/material";
 
-function NavBar({cart}) {
+function NavBar({ cart }) {
   const [icon, setIcon] = useState(false);
   const handleClick = () => {
     setIcon(!icon);
@@ -39,11 +39,12 @@ function NavBar({cart}) {
               icon ? " navbar-nav nav-menu-mobile " : " navbar-nav nav-menu"
             }
           >
-            <li className="nav-item active"><NavLink to={"/"} className="nav-link" onClick={closeSideDrawer}>
-              <Button color="inherit" className="button">
-                Home
-              </Button>
-            </NavLink>
+            <li className="nav-item active">
+              <NavLink to={"/"} className="nav-link" onClick={closeSideDrawer}>
+                <Button color="inherit" className="button">
+                  Home
+                </Button>
+              </NavLink>
             </li>
             <li className="nav-item ">
               <NavLink
@@ -100,13 +101,9 @@ function NavBar({cart}) {
               </IconButton>
             </NavLink>
             <NavLink to={"./login"}>
-
-              <IconButton
-                size="large"
-                aria-label="profile-button"
-              >
+              <IconButton size="large" aria-label="profile-button">
                 {" "}
-                <PermIdentityIcon className="cart-icon"/>
+                <PermIdentityIcon className="cart-icon" />
               </IconButton>
             </NavLink>
           </div>

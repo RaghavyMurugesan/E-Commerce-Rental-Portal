@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Card, CardMedia, CardContent, CardActions } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
+import InfoIcon from "@mui/icons-material/Info";
 export function ProductCard({ item, addToCart }) {
-  const { name, image, brand, category, price } = item;
+  const { id, name, image, brand, category, price } = item;
   const [button, setButton] = useState();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -17,6 +20,7 @@ export function ProductCard({ item, addToCart }) {
         />
         <CardContent className="card-body">
           <h4 className="card-title">{name}</h4>
+          {/* <InfoIcon onClick={() => navigate(`/product/${id}`)} /> */}
           <h6>{brand}</h6>
           <p>{category}</p>
           <h3>{price}/day</h3>
