@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { productList } from "../data.js";
 import { Box, Stack, Chip, TextField, Button } from "@mui/material";
 import { ProductCard } from "../components/ProductCard.js";
-import { useNavigate } from "react-router-dom";
 
-const navigate = useNavigate();
 const allCatvalues = [
   ...new Set(
     productList.map((el) => {
@@ -16,11 +14,11 @@ const allCatvalues = [
 console.log(allCatvalues);
 function Product({ addToCart, product, setProduct }) {
   const [catItems] = useState(allCatvalues);
-  const [name, setName] = useState("");
-  const [image, setImage] = useState("");
-  const [brand, setBrand] = useState("");
-  const [category, setCategory] = useState("");
-  const [price, setPrice] = useState("");
+  // const [name, setName] = useState("");
+  // const [image, setImage] = useState("");
+  // const [brand, setBrand] = useState("");
+  // const [category, setCategory] = useState("");
+  // const [price, setPrice] = useState("");
 
   const filterMenu = (category) => {
     if (category === "all") {
@@ -48,7 +46,7 @@ function Product({ addToCart, product, setProduct }) {
           />
         ))}
       </Stack>
-      <div>
+      {/* <div>
         <Stack direction="column">
           Add Product
           <TextField
@@ -96,16 +94,11 @@ function Product({ addToCart, product, setProduct }) {
             Add Product
           </Button>
         </Stack>
-      </div>
+      </div> */}
 
       <Box className="box">
         {product.map((item, index) => (
-          <ProductCard
-            key={index}
-            item={item}
-            addToCart={addToCart}
-            onClick={() => navigate(`/product/${index}`)}
-          />
+          <ProductCard key={index} item={item} addToCart={addToCart} />
         ))}
       </Box>
     </div>

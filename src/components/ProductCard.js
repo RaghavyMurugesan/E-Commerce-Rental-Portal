@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Card, CardMedia, CardContent, CardActions } from "@mui/material";
 import { NavLink, useNavigate } from "react-router-dom";
-
 import InfoIcon from "@mui/icons-material/Info";
 export function ProductCard({ item, addToCart }) {
   const { id, name, image, brand, category, price } = item;
@@ -12,15 +11,10 @@ export function ProductCard({ item, addToCart }) {
     <>
       {" "}
       <Card className="card">
-        <CardMedia
-          component="img"
-          alt={name}
-          src={image}
-          className="card-img-top"
-        />
+        <CardMedia component="img" alt={name} src={image} className="card-img-top" />
         <CardContent className="card-body">
           <h4 className="card-title">{name}</h4>
-          {/* <InfoIcon onClick={() => navigate(`/product/${id}`)} /> */}
+          <InfoIcon onClick={() => navigate(`/product/${id}`)} />
           <h6>{brand}</h6>
           <p>{category}</p>
           <h3>{price}/day</h3>
@@ -28,10 +22,7 @@ export function ProductCard({ item, addToCart }) {
         <CardActions>
           {button ? (
             <NavLink to={"../cart"}>
-              <button
-                className="btn btn-warning"
-                onClick={() => setButton(!button)}
-              >
+              <button className="btn btn-warning" onClick={() => setButton(!button)}>
                 View Cart
               </button>
             </NavLink>
@@ -41,8 +32,7 @@ export function ProductCard({ item, addToCart }) {
               onClick={() => {
                 addToCart(item);
                 setButton(!button);
-              }}
-            >
+              }}>
               Add to Cart
             </button>
           )}

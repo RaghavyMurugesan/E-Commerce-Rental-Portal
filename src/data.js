@@ -12,13 +12,21 @@ let productList = [
     category: "Camera",
     price: 2500,
     unit: 1,
+    description:
+      "The Nikon Z6 (Body) Mirrorless Camera camera has CMOS Sensor sensor. As far as the ISO levels are concerned, this camera supports 100-51200 ISO. Movies can be recorded at a resolution of 3840x2160 Pixels (2160p),1920x1080 Pixels (1080p HD). Overall, this camera weighs 675 Gram and has 3.2 Inch display to click, and preview images.",
+    specification: {
+      connectivity: "Wi-Fi,HDMI",
+      zoom: "1080p HD Video",
+      sensor: "CMOS Sensor",
+      battery: "Rechargable",
+      resolution: "25MP Resolution",
+      userRating: "5.0",
+    },
   },
   {
     id: 1,
-
     name: "Sony HXR-NX200",
-    image:
-      "https://lenstiger.com/image/product/621ce4c1b3fe0816DfEJkYRL._AC_SL1500_.jpg",
+    image: "https://lenstiger.com/image/product/621ce4c1b3fe0816DfEJkYRL._AC_SL1500_.jpg",
     brand: "Sony",
     category: "Camera",
     price: 1750,
@@ -38,8 +46,7 @@ let productList = [
     id: 3,
 
     name: "Canon RF 70-200mm F2.8 L",
-    image:
-      "https://lenstiger.com/image/product/60dd95586db0aCanon-RF-70-200mm-F2.8-L-IS-USM-Lens.jpg",
+    image: "https://lenstiger.com/image/product/60dd95586db0aCanon-RF-70-200mm-F2.8-L-IS-USM-Lens.jpg",
     brand: "Canon",
     category: "lens",
     price: 1750,
@@ -48,8 +55,7 @@ let productList = [
   {
     id: 4,
     name: " GODOX SL100Bi",
-    image:
-      "https://lenstiger.com/image/product/621ce25665a8a71gATSv47hS._SL1500_.jpg",
+    image: "https://lenstiger.com/image/product/621ce25665a8a71gATSv47hS._SL1500_.jpg",
     brand: "Godox",
     category: "Lights",
     price: 500,
@@ -61,15 +67,13 @@ let stepdata = [
     step: 1,
     function: "Choose the Product and Date",
     icon: <EventAvailableIcon />,
-    description:
-      "Browse & Select from a wide range of Rental products on our website",
+    description: "Browse & Select from a wide range of Rental products on our website",
   },
   {
     step: 2,
     function: "Choose Location and Transit-mode",
     icon: <LocationOnIcon />,
-    description:
-      "We provide either Shipping to your address or Pickup at our Store/Franchise",
+    description: "We provide either Shipping to your address or Pickup at our Store/Franchise",
   },
   {
     step: 3,
