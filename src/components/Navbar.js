@@ -34,11 +34,7 @@ function NavBar({ cart }) {
         </div>
 
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul
-            className={
-              icon ? " navbar-nav nav-menu-mobile " : " navbar-nav nav-menu"
-            }
-          >
+          <ul className={icon ? " navbar-nav nav-menu-mobile " : " navbar-nav nav-menu"}>
             <li className="nav-item active">
               <NavLink to={"/"} className="nav-link" onClick={closeSideDrawer}>
                 <Button color="inherit" className="button">
@@ -47,44 +43,28 @@ function NavBar({ cart }) {
               </NavLink>
             </li>
             <li className="nav-item ">
-              <NavLink
-                to={"/product"}
-                className="nav-link"
-                onClick={closeSideDrawer}
-              >
+              <NavLink to={"/product"} className="nav-link" onClick={closeSideDrawer}>
                 <Button color="inherit" className="button">
                   Product
                 </Button>
               </NavLink>
             </li>
             <li className="nav-item ">
-              <NavLink
-                to={"/services"}
-                className="nav-link"
-                onClick={closeSideDrawer}
-              >
+              <NavLink to={"/services"} className="nav-link" onClick={closeSideDrawer}>
                 <Button color="inherit" className="button">
                   Services
                 </Button>
               </NavLink>
             </li>
             <li className="nav-item ">
-              <NavLink
-                to={"/about"}
-                className="nav-link"
-                onClick={closeSideDrawer}
-              >
+              <NavLink to={"/about"} className="nav-link" onClick={closeSideDrawer}>
                 <Button color="inherit" className="button">
                   About Us
                 </Button>
               </NavLink>
             </li>
             <li className="nav-item ">
-              <NavLink
-                to={"/contact"}
-                className="nav-link"
-                onClick={closeSideDrawer}
-              >
+              <NavLink to={"/contact"} className="nav-link" onClick={closeSideDrawer}>
                 <Button color="inherit" className="nav-button">
                   Contact
                 </Button>

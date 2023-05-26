@@ -69,7 +69,7 @@ div .contactForm .formInput {
   gap: 1rem;
   align-items: stretch;
   justify-content: flex-start;
-  padding-top: 30px;
+  /* padding-top: 30px; */
 }
 div .message {
   display: flex;
@@ -137,4 +137,3 @@ div .message {
     padding-top: 5px;
   }
 }
-/* background-image: linear-gradient(to right top, #af1b77, #9a429d, #795db8, #4d72c6, #0083c8); */

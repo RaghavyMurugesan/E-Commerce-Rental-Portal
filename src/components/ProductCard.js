@@ -6,15 +6,15 @@ export function ProductCard({ item, addToCart }) {
   const { id, name, image, brand, category, price } = item;
   const [button, setButton] = useState();
   const navigate = useNavigate();
-
   return (
     <>
       {" "}
       <Card className="card">
         <CardMedia component="img" alt={name} src={image} className="card-img-top" />
         <CardContent className="card-body">
-          <h4 className="card-title">{name}</h4>
-          <InfoIcon onClick={() => navigate(`/product/${id}`)} />
+          <h4 className="card-title">
+            {name} <InfoIcon onClick={() => navigate(`/product/${id}`)} />
+          </h4>
           <h6>{brand}</h6>
           <p>{category}</p>
           <h3>{price}/day</h3>

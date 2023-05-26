@@ -36,20 +36,19 @@ div .detailsContent {
 }
 .detailsContent section h3 {
   margin-bottom: 0;
-  color: var(--main-color);
+  color: var(--second-color);
   font-weight: bold;
+}
+.detailsContent h5 {
+  color: var(--main-color);
 }
 
 .detailsContent h2 {
   text-transform: uppercase;
-  letter-spacing: 2px;
 }
 .detailsContent p {
   font-size: 14px;
   text-align: justify;
   align-items: center;
   padding: 1rem 0.25rem;
-}
-article {
-  background-color: pink;
 }

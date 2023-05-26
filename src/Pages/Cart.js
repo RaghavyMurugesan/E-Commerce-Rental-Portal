@@ -61,6 +61,7 @@ function DateChooser() {
 function Cart({ cart, setCart }) {
   let handleRemove = (index) => {
     let newcart = [...cart];
+    console.log(index);
     newcart.splice(index, 1);
     setCart(newcart);
   };
@@ -85,21 +86,12 @@ function Cart({ cart, setCart }) {
                 <h4>{el.name}</h4>
                 <div className="cart-price">
                   <h6>{el.price}</h6>
-                  <Counter
-                    cart={cart}
-                    index={index}
-                    el={el}
-                    setCart={setCart}
-                  />
+                  <Counter cart={cart} index={index} el={el} setCart={setCart} />
                 </div>
                 <div className="date-picker">
                   <DateChooser />
                 </div>
-                <DeleteIcon
-                  className="delete"
-                  onClick={handleRemove}
-                  size="large"
-                />
+                <DeleteIcon className="delete" onClick={handleRemove} size="large" />
               </div>
             </div>
             <Divider />

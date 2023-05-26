@@ -1,10 +1,17 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import "../Styles/ProductDetails.css";
+import NotFoundPage from "../Pages/NotFoundPage";
+
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 export function ProductDetails({ product, addToCart }) {
   const { id } = useParams();
   const selectedProduct = product[id];
+  // const navigate = useNavigate();
+  if (!selectedProduct) {
+    return <NotFoundPage />;
+  }
   console.log(id);
   return (
     <>
@@ -19,20 +26,16 @@ export function ProductDetails({ product, addToCart }) {
           </section>
           <h5>{selectedProduct.brand}</h5>
           <p>{selectedProduct.description}</p>
-
-          <Button onClick={() => addToCart(product[id])}>Rent Now</Button>
+          <Button variant="contained" onClick={() => addToCart(product[id])}>
+            Rent Now
+          </Button>
         </div>
       </div>
-      <article>
-        Specification
-        <table>
-          <thead>
-            <tr>hello</tr>
-            <tr>hello</tr>
-            <tr>hello</tr>
-          </thead>
-        </table>
-      </article>
+      <NavLink to={"../product"}>
+        <Button variant="outlined" startIcon={<ChevronLeftIcon />}>
+          Back to Product
+        </Button>
+      </NavLink>
     </>
   );
 }

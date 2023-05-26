@@ -1,0 +1,7 @@
+.side-head {
+  display: flex;
+  flex-direction: column;
+  background: var(--main-color);
+  color: white;
+  align-items: center;
+}
